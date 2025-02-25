@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bqqptpfns11b"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="VSplitContainer" type="VBoxContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -138.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "
+Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label" type="Label" parent="VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://b62us4y4k3pw2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4tmy"]
+size = Vector2(13.9179, 20)
+
+[sub_resource type="Gradient" id="Gradient_ogw1f"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vihus"]
+gradient = SubResource("Gradient_ogw1f")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l1jv"]
+size = Vector2(452, 4)
+
+[node name="GameBoard" type="Node2D"]
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+position = Vector2(320, 811)
+scale = Vector2(32.16, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(-3.07836, -109)
+shape = SubResource("RectangleShape2D_w4tmy")
+
+[node name="Right" type="StaticBody2D" parent="."]
+position = Vector2(650, 407)
+scale = Vector2(0.999998, 40.76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(-204, 0)
+shape = SubResource("RectangleShape2D_w4tmy")
+
+[node name="Left" type="StaticBody2D" parent="."]
+position = Vector2(-11, 407)
+scale = Vector2(0.999998, 40.76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(4.00001, 0)
+shape = SubResource("RectangleShape2D_w4tmy")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(219.052, 347.602)
+rotation = -1.5708
+scale = Vector2(2.68357, 439.644)
+texture = SubResource("GradientTexture1D_vihus")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(213, 72)
+shape = SubResource("RectangleShape2D_1l1jv")
+
+[node name="Line2D" type="Line2D" parent="Area2D"]
+position = Vector2(-1.0387, 0)
+scale = Vector2(0.930754, 1)
+points = PackedVector2Array(473, 74, 68.3813, 74, -12, 74)
+width = 3.0
+default_color = Color(1, 0.47, 0.47, 1)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(0, 702)
+points = PackedVector2Array(1, 0, 438, 0)
+width = 20.0
+default_color = Color(3.27289e-06, 0.841958, 0.842103, 1)
