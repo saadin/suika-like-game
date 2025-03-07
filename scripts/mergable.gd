@@ -14,11 +14,13 @@ class LevelSpec:
 	@export var sprite: Resource
 	@export var level: int
 	@export var scale: Vector2
+	@export var score: int
 	
 	func _init(level: int, mergable_scale: float, score: int, sprite: Resource) -> void:
 		self.sprite = sprite
 		self.level = level
 		self.scale = Vector2.ONE * mergable_scale
+		self.score = score
 
 # sizes from suika.gg:
 #w: 423
@@ -36,7 +38,7 @@ class LevelSpec:
 #11: 244
 
 var _levels: Dictionary = {
-	1: LevelSpec.new(1, 0.3, 2, preload("res://assets/1-parrot.png")),
+	1: LevelSpec.new(1, 0.3, 1, preload("res://assets/1-parrot.png")),
 	2: LevelSpec.new(2, 0.47, 3, preload("res://assets/2-duck.png")),
 	3: LevelSpec.new(3, 0.63, 6, preload("res://assets/3-penguin.png")),
 	4: LevelSpec.new(4, 0.70, 10, preload("res://assets/4-sloth.png")),
@@ -140,3 +142,7 @@ func shrink_and_remove():
 	var tween: Tween = create_tween()
 	tween.tween_property($Sprite, "scale", Vector2.ZERO, size_change_duration)
 	tween.tween_callback(queue_free)
+
+
+func get_score():
+	return _levels[mergable_level].score

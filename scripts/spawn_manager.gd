@@ -5,6 +5,7 @@ const POOF_PARTICLE_SCENE = preload("res://scenes/poof_particle.tscn")
 const MAX_LEVEL: int = 5
 var _max_spawned_level: int = 1
 var _next_item: Mergable = null
+var _score: int = 0
 
 @export var merge_animation_duration: float = 0.1
 
@@ -71,6 +72,7 @@ func _start_merge_animation(target_item: Mergable, other_item: Mergable):
 func _remove_merged_items(target_item: Mergable, other_item: Mergable):
 	_spawn_merge_particles(target_item.position)
 	_play_merge_sound()
+	_add_score(target_item.get_score() + other_item.get_score())
 	
 	target_item.shrink_and_remove()
 	other_item.shrink_and_remove()
@@ -92,3 +94,8 @@ func _spawn_merge_particles(particle_position: Vector2):
 
 func _play_merge_sound():
 	$MergeSound.play()
+
+
+func _add_score(amount: int):
+	_score += amount
+	$Hud.set_score(_score)
