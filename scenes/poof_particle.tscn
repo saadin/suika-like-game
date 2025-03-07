@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://o580p0xwubq"]
+
+[ext_resource type="Script" path="res://scripts/poof_particles.gd" id="1_govvo"]
+
+[sub_resource type="Curve" id="Curve_6qsg7"]
+_data = [Vector2(0.00921659, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.164835), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_of0p3"]
+offsets = PackedFloat32Array(0.619048, 1)
+colors = PackedColorArray(1, 0.814952, 0.533377, 1, 1, 1, 1, 1)
+
+[node name="PoofParticle" type="Node2D"]
+script = ExtResource("1_govvo")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 70
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.13
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_6qsg7")
+color_ramp = SubResource("Gradient_of0p3")
+
+[connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]

@@ -19,20 +19,34 @@ class LevelSpec:
 		self.sprite = sprite
 		self.level = level
 		self.scale = Vector2.ONE * mergable_scale
-	
+
+# sizes from suika.gg:
+#w: 423
+#h: 577
+#1: 30
+#2: 47
+#3: 63
+#4: 70
+#5: 90
+#6: 109
+#7: 113
+#8: 155
+#9: 184
+#10: 256
+#11: 244
 
 var _levels: Dictionary = {
 	1: LevelSpec.new(1, 0.3, 2, preload("res://assets/1-parrot.png")),
-	2: LevelSpec.new(2, 0.5, 3, preload("res://assets/2-duck.png")),
-	3: LevelSpec.new(3, 0.55, 6, preload("res://assets/3-penguin.png")),
-	4: LevelSpec.new(4, 0.57, 10, preload("res://assets/4-sloth.png")),
-	5: LevelSpec.new(5, 0.65, 15, preload("res://assets/5-gorilla.png")),
-	6: LevelSpec.new(6, 0.75, 21, preload("res://assets/6-panda.png")),
-	7: LevelSpec.new(7, 0.82, 28, preload("res://assets/7-cow.png")),
-	8: LevelSpec.new(8, 0.97, 36, preload("res://assets/8-hippo.png")),
-	9: LevelSpec.new(9, 1.05, 45, preload("res://assets/9-giraffe.png")),
-	10: LevelSpec.new(10, 1.1, 55, preload("res://assets/10-elephant.png")),
-	11: LevelSpec.new(11, 1.25, 66, preload("res://assets/11-whale.png")),
+	2: LevelSpec.new(2, 0.47, 3, preload("res://assets/2-duck.png")),
+	3: LevelSpec.new(3, 0.63, 6, preload("res://assets/3-penguin.png")),
+	4: LevelSpec.new(4, 0.70, 10, preload("res://assets/4-sloth.png")),
+	5: LevelSpec.new(5, 0.90, 15, preload("res://assets/5-gorilla.png")),
+	6: LevelSpec.new(6, 1.09, 21, preload("res://assets/6-panda.png")),
+	7: LevelSpec.new(7, 1.13, 28, preload("res://assets/7-cow.png")),
+	8: LevelSpec.new(8, 1.55, 36, preload("res://assets/8-hippo.png")),
+	9: LevelSpec.new(9, 1.84, 45, preload("res://assets/9-giraffe.png")),
+	10: LevelSpec.new(10, 2.56, 55, preload("res://assets/10-elephant.png")),
+	11: LevelSpec.new(11, 2.44, 66, preload("res://assets/11-whale.png")),
 }
 
 
